@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">Liste des utilisateurs</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Email</td>
+              <td>First Name</td>
+              <td>Last Name</td>
+              <td>Picture</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let h of home">
+              <td>{{h.id}}</td>
+              <td>{{h.email}}</td>
+              <td>{{h.first_name}}</td>
+              <td>{{h.last_name}}</td>
+              <td>{{h.avatar}}</td>
+              <td>
+                <div>
+                  <button class="btn btn-dark-sm">
+                    <div class="btn-group">
+                      <button class="btn dropdown-toggle bg-success" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actions
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" (click)="deleteUser(h)">Delete</button></li>
+                        <li><button class="dropdown-item" routerLink="/">Update</button></li>
+                      </ul>
+                    </div>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+</div>
